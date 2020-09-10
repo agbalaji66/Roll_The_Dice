@@ -22,13 +22,13 @@ void main() {
 
 int leftDice() {
   int leftDiceNumber = 1;
-  leftDiceNumber = Random().nextInt(6) + 1;
+
   return (leftDiceNumber);
 }
 
 int rightDice() {
   int rightDiceNumber = 1;
-  rightDiceNumber = Random().nextInt(6) + 1;
+
   return (rightDiceNumber);
 }
 
@@ -40,6 +40,11 @@ class DicePage extends StatefulWidget {
 class _DicePageState extends State<DicePage> {
   int leftDiceNumber = 1;
   int rightDiceNumber = 1;
+  void ChangeDice() {
+    leftDiceNumber = Random().nextInt(6) + 1;
+    rightDiceNumber = Random().nextInt(6) + 1;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -66,10 +71,11 @@ class _DicePageState extends State<DicePage> {
                   backgroundColor: Colors.orange,
                   onPressed: () {
                     setState(() {
-                      leftDiceNumber = leftDice();
+                      //leftDiceNumber = leftDice();
+                      ChangeDice();
 
                       /// print(leftDiceNumber);
-                      rightDiceNumber = rightDice();
+                      //rightDiceNumber = rightDice();
                     });
                   },
                 ),

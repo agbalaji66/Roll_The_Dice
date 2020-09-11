@@ -47,42 +47,51 @@ class _DicePageState extends State<DicePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            child: Image.asset('images/dice$leftDiceNumber.png'),
-          ),
-          Expanded(
-            child: Image.asset('images/dice$rightDiceNumber.png'),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: FloatingActionButton(
-                  child: Text(
-                    'Roll',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                    ),
-                  ),
-                  backgroundColor: Colors.orange,
-                  onPressed: () {
-                    setState(() {
-                      //leftDiceNumber = leftDice();
-                      ChangeDice();
-
-                      /// print(leftDiceNumber);
-                      //rightDiceNumber = rightDice();
-                    });
-                  },
+    return Container(
+      child: Center(
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              width: 140.0,
+              height: 140.0,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Image.asset('images/dice$leftDiceNumber.png'),
                 ),
+                Expanded(
+                  child: Image.asset('images/dice$rightDiceNumber.png'),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 140.0,
+              height: 140.0,
+            ),
+            Center(
+              child: FloatingActionButton(
+                child: Text(
+                  'Roll',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
+                ),
+                backgroundColor: Colors.orange,
+                onPressed: () {
+                  setState(() {
+                    //leftDiceNumber = leftDice();
+                    ChangeDice();
+
+                    /// print(leftDiceNumber);
+                    //rightDiceNumber = rightDice();
+                  });
+                },
               ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
